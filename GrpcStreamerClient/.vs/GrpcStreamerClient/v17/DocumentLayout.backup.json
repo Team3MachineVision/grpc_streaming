@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mingu\\project\\grpc_streaming\\GrpcStreamerClient\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{34BC4EBA-82C6-47BB-8BC3-7E72E5FDA058}|GrpcStreamerClient\\GrpcStreamerClient.csproj|c:\\users\\mingu\\project\\grpc_streaming\\grpcstreamerclient\\grpcstreamerclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34BC4EBA-82C6-47BB-8BC3-7E72E5FDA058}|GrpcStreamerClient\\GrpcStreamerClient.csproj|solutionrelative:grpcstreamerclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34BC4EBA-82C6-47BB-8BC3-7E72E5FDA058}|GrpcStreamerClient\\GrpcStreamerClient.csproj|c:\\users\\mingu\\project\\grpc_streaming\\grpcstreamerclient\\grpcstreamerclient\\protos\\webcamstreamer.proto||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{34BC4EBA-82C6-47BB-8BC3-7E72E5FDA058}|GrpcStreamerClient\\GrpcStreamerClient.csproj|solutionrelative:grpcstreamerclient\\protos\\webcamstreamer.proto||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34BC4EBA-82C6-47BB-8BC3-7E72E5FDA058}|GrpcStreamerClient\\GrpcStreamerClient.csproj|c:\\users\\mingu\\project\\grpc_streaming\\grpcstreamerclient\\grpcstreamerclient\\grpcstreamerclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{34BC4EBA-82C6-47BB-8BC3-7E72E5FDA058}|GrpcStreamerClient\\GrpcStreamerClient.csproj|solutionrelative:grpcstreamerclient\\grpcstreamerclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GrpcStreamerClient",
+              "DocumentMoniker": "C:\\Users\\mingu\\project\\grpc_streaming\\GrpcStreamerClient\\GrpcStreamerClient\\GrpcStreamerClient.csproj",
+              "RelativeDocumentMoniker": "GrpcStreamerClient\\GrpcStreamerClient.csproj",
+              "ToolTip": "C:\\Users\\mingu\\project\\grpc_streaming\\GrpcStreamerClient\\GrpcStreamerClient\\GrpcStreamerClient.csproj",
+              "RelativeToolTip": "GrpcStreamerClient\\GrpcStreamerClient.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-23T06:58:30.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WebcamStreamer.proto",
+              "DocumentMoniker": "C:\\Users\\mingu\\project\\grpc_streaming\\GrpcStreamerClient\\GrpcStreamerClient\\Protos\\WebcamStreamer.proto",
+              "RelativeDocumentMoniker": "GrpcStreamerClient\\Protos\\WebcamStreamer.proto",
+              "ToolTip": "C:\\Users\\mingu\\project\\grpc_streaming\\GrpcStreamerClient\\GrpcStreamerClient\\Protos\\WebcamStreamer.proto",
+              "RelativeToolTip": "GrpcStreamerClient\\Protos\\WebcamStreamer.proto",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003853|",
+              "WhenOpened": "2025-07-23T06:53:56.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mingu\\project\\grpc_streaming\\GrpcStreamerClient\\GrpcStreamerClient\\Program.cs",
+              "RelativeDocumentMoniker": "GrpcStreamerClient\\Program.cs",
+              "ToolTip": "C:\\Users\\mingu\\project\\grpc_streaming\\GrpcStreamerClient\\GrpcStreamerClient\\Program.cs",
+              "RelativeToolTip": "GrpcStreamerClient\\Program.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwBsAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T06:49:04.497Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

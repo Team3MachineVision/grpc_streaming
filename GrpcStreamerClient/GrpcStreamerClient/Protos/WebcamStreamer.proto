@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcStreamerClient";
+
+package webcam;
+
+service WebcamStreamer {
+  rpc StreamVideo(stream Frame) returns (stream FrameResponse);
+}
+
+message Frame {
+  bytes image = 1;
+  int64 timestamp = 2;
+}
+
+message FrameResponse {
+  string status = 1;
+  string message = 2;
+}
+
