@@ -1,37 +1,83 @@
+import cv2
 import grpc
-from concurrent import futures
 import WebcamStreamer_pb2
 import WebcamStreamer_pb2_grpc
-import numpy as np
-import cv2
+import time
+import random
+from ultralytics import YOLO
 
-class WebcamStreamerServicer(WebcamStreamer_pb2_grpc.WebcamStreamerServicer):
-    def StreamVideo(self, request_iterator, context):
-        for frame in request_iterator:
-            print(f"[수신] Timestamp: {frame.timestamp}, 크기: {len(frame.image)} bytes")
+# YOLO 모델 로드 (cam 0 전용)
+yolo_model = YOLO("yolo11n.pt")
 
-            # JPEG 바이트 → OpenCV 이미지
-            np_array = np.frombuffer(frame.image, np.uint8)
-            img = cv2.imdecode(np_array, cv2.IMREAD_COLOR)
-            if img is not None:
-                cv2.imshow("Python 수신 영상", img)
-                if cv2.waitKey(1) == ord('q'):
-                    break
+def process_frame(cam_id, frame):
+    if cam_id == 0:
+        # YOLO 감지
+        results = yolo_model.predict(frame, verbose=False)
+        frame = results[0].plot()  # bounding box 그린 이미지
+        toe = 1
+        camber = 2
 
-            yield WebcamStreamer_pb2.FrameResponse(
-                status="OK",
-                message=f"수신 완료: {frame.timestamp}"
-            )
-        
-        cv2.destroyAllWindows()
+    elif cam_id == 1:
+        # 도형 그리기 (예: 빨간 원)
+        h, w = frame.shape[:2]
+        cv2.circle(frame, (w//2, h//2), 100, (0, 0, 255), 5)  # 중심에 원
+        toe = 10
+        camber = 20
 
-def serve():
-    server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-    WebcamStreamer_pb2_grpc.add_WebcamStreamerServicer_to_server(WebcamStreamerServicer(), server)
-    server.add_insecure_port('[::]:5001')  # C# 클라이언트에서 이 포트로 전송
-    server.start()
-    print("Python gRPC 서버 실행 중... (port 5001)")
-    server.wait_for_termination()
+    elif cam_id == 2:
+        # 선 그리기 (예: 녹색 대각선)
+        h, w = frame.shape[:2]
+        cv2.line(frame, (0, 0), (w, h), (0, 255, 0), 5)
+        toe = 30
+        camber = 40
 
-if __name__ == '__main__':
-    serve()
+    return frame, toe, camber
+
+def generate_frames():
+    caps = [cv2.VideoCapture(i, cv2.CAP_DSHOW) for i in range(3)]
+
+    try:
+        while True:
+            for cam_id, cap in enumerate(caps):
+                if not cap.isOpened():
+                    continue
+
+                ret, frame = cap.read()
+                if not ret:
+                    continue
+
+                processed, toe,  camber= process_frame(cam_id, frame)
+
+                ret2, jpeg = cv2.imencode(".jpg", processed)
+                if not ret2:
+                    continue
+
+
+
+                print(f"[Cam {cam_id}] toe: {toe}, camber: {camber}")
+
+                yield WebcamStreamer_pb2.FrameData(
+                    camera_id=cam_id,
+                    frame=jpeg.tobytes(),
+                    toe_deg=toe,
+                    camber_deg=camber
+                )
+
+            time.sleep(0.03)
+
+    finally:
+        for cap in caps:
+            cap.release()
+
+def main():
+    channel = grpc.insecure_channel("localhost:50051")
+    stub = WebcamStreamer_pb2_grpc.FrameReceiverStub(channel)
+
+    try:
+        response = stub.SendFrames(generate_frames())
+        print(f"gRPC server responded: {response.message}")
+    except grpc.RpcError as e:
+        print(f"gRPC error: {e.code()} - {e.details()}")
+
+if __name__ == "__main__":
+    main()

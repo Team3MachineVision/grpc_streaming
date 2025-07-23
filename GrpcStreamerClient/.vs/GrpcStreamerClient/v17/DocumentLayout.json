@@ -27,15 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "GrpcStreamerClient",
+              "Title": "GrpcStreamerClient.csproj",
               "DocumentMoniker": "C:\\Users\\mingu\\project\\grpc_streaming\\GrpcStreamerClient\\GrpcStreamerClient\\GrpcStreamerClient.csproj",
               "RelativeDocumentMoniker": "GrpcStreamerClient\\GrpcStreamerClient.csproj",
               "ToolTip": "C:\\Users\\mingu\\project\\grpc_streaming\\GrpcStreamerClient\\GrpcStreamerClient\\GrpcStreamerClient.csproj",
               "RelativeToolTip": "GrpcStreamerClient\\GrpcStreamerClient.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-23T06:58:30.065Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T06:58:30.065Z"
             },
             {
               "$type": "Document",
@@ -47,8 +46,7 @@
               "RelativeToolTip": "GrpcStreamerClient\\Protos\\WebcamStreamer.proto",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003853|",
-              "WhenOpened": "2025-07-23T06:53:56.334Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T06:53:56.334Z"
             },
             {
               "$type": "Document",
@@ -58,7 +56,7 @@
               "RelativeDocumentMoniker": "GrpcStreamerClient\\Program.cs",
               "ToolTip": "C:\\Users\\mingu\\project\\grpc_streaming\\GrpcStreamerClient\\GrpcStreamerClient\\Program.cs",
               "RelativeToolTip": "GrpcStreamerClient\\Program.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAgwBsAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwCUAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-23T06:49:04.497Z",
               "EditorCaption": ""

@@ -1,0 +1,18 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "WebcamStreamer.Grpc"; // C# 네임스페이스 설정
+
+service FrameReceiver {
+    rpc SendFrames (stream FrameData) returns (FrameAck);
+}
+
+message FrameData {
+    int32 camera_id = 1;
+    bytes frame = 2;
+    float toe_deg = 3;
+    float camber_deg = 4;
+}
+
+message FrameAck {
+    string message = 1;
+}

@@ -32,26 +32,26 @@ namespace GrpcStreaming.Client
                 Console.WriteLine($"❌ Python 서버 연결 실패: {ex.Message}");
             }
 
-            // C# 서버 연결 시도
-            //try
-            //{
-            //    var channelCsharp = GrpcChannel.ForAddress("http://localhost:5002");
-            //    var clientCsharp = new WebcamStreamer.WebcamStreamerClient(channelCsharp);
-            //    callCsharp = clientCsharp.StreamVideo();
-            //    Console.WriteLine("✅ C# 서버 연결 성공");
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine($"⚠️ C# 서버 연결 실패 (무시됨): {ex.Message}");
-            //    callCsharp = null; // 명시적으로 비워두기
-            //}
+            //C# 서버 연결 시도
+            try
+            {
+                var channelCsharp = GrpcChannel.ForAddress("http://localhost:5002");
+                var clientCsharp = new WebcamStreamer.WebcamStreamerClient(channelCsharp);
+                callCsharp = clientCsharp.StreamVideo();
+                Console.WriteLine("✅ C# 서버 연결 성공");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"⚠️ C# 서버 연결 실패 (무시됨): {ex.Message}");
+                callCsharp = null; // 명시적으로 비워두기
+            }
 
-            //// 연결된 서버가 하나도 없다면 종료
-            //if (callPython == null && callCsharp == null)
-            //{
-            //    Console.WriteLine("❌ 연결된 서버가 없습니다. 프로그램을 종료합니다.");
-            //    return;
-            //}
+            // 연결된 서버가 하나도 없다면 종료
+            if (callPython == null && callCsharp == null)
+            {
+                Console.WriteLine("❌ 연결된 서버가 없습니다. 프로그램을 종료합니다.");
+                return;
+            }
 
             // 웹캠 열기
             using var capture = new VideoCapture(0);

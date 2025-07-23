@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GrpcStreamerClient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d78428ddf8133f4486447102dda5be01bd4e11e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86875f571940ff902ce44a2f36591a1a217bcfe7")]
 [assembly: System.Reflection.AssemblyProductAttribute("GrpcStreamerClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GrpcStreamerClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

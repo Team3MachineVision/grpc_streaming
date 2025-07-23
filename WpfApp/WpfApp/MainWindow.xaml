@@ -1,0 +1,39 @@
+﻿<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Multi-Camera Viewer" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- 카메라 1 -->
+        <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+            <Image x:Name="Cam1View" Width="240" Height="180" Margin="0,0,0,10"/>
+            <TextBlock Text="Toe:"/>
+            <Label x:Name="Toe1Label" Content="0.00°" />
+            <TextBlock Text="Camber:"/>
+            <Label x:Name="Camber1Label" Content="0.00°" />
+        </StackPanel>
+
+        <!-- 카메라 2 -->
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+            <Image x:Name="Cam2View" Width="240" Height="180" Margin="0,0,0,10"/>
+            <TextBlock Text="Toe:"/>
+            <Label x:Name="Toe2Label" Content="0.00°" />
+            <TextBlock Text="Camber:"/>
+            <Label x:Name="Camber2Label" Content="0.00°" />
+        </StackPanel>
+
+        <!-- 카메라 3 -->
+        <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+            <Image x:Name="Cam3View" Width="240" Height="180" Margin="0,0,0,10"/>
+            <TextBlock Text="Toe:"/>
+            <Label x:Name="Toe3Label" Content="0.00°" />
+            <TextBlock Text="Camber:"/>
+            <Label x:Name="Camber3Label" Content="0.00°" />
+        </StackPanel>
+    </Grid>
+</Window>

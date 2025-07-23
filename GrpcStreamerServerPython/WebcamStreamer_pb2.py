@@ -24,17 +24,18 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14WebcamStreamer.proto\x12\x06webcam\")\n\x05\x46rame\x12\r\n\x05image\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\"0\n\rFrameResponse\x12\x0e\n\x06status\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t2I\n\x0eWebcamStreamer\x12\x37\n\x0bStreamVideo\x12\r.webcam.Frame\x1a\x15.webcam.FrameResponse(\x01\x30\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14WebcamStreamer.proto\"R\n\tFrameData\x12\x11\n\tcamera_id\x18\x01 \x01(\x05\x12\r\n\x05\x66rame\x18\x02 \x01(\x0c\x12\x0f\n\x07toe_deg\x18\x03 \x01(\x02\x12\x12\n\ncamber_deg\x18\x04 \x01(\x02\"\x1b\n\x08\x46rameAck\x12\x0f\n\x07message\x18\x01 \x01(\t26\n\rFrameReceiver\x12%\n\nSendFrames\x12\n.FrameData\x1a\t.FrameAck(\x01\x42\x16\xaa\x02\x13WebcamStreamer.Grpcb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'WebcamStreamer_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-  DESCRIPTOR._loaded_options = None
-  _globals['_FRAME']._serialized_start=32
-  _globals['_FRAME']._serialized_end=73
-  _globals['_FRAMERESPONSE']._serialized_start=75
-  _globals['_FRAMERESPONSE']._serialized_end=123
-  _globals['_WEBCAMSTREAMER']._serialized_start=125
-  _globals['_WEBCAMSTREAMER']._serialized_end=198
+  _globals['DESCRIPTOR']._loaded_options = None
+  _globals['DESCRIPTOR']._serialized_options = b'\252\002\023WebcamStreamer.Grpc'
+  _globals['_FRAMEDATA']._serialized_start=24
+  _globals['_FRAMEDATA']._serialized_end=106
+  _globals['_FRAMEACK']._serialized_start=108
+  _globals['_FRAMEACK']._serialized_end=135
+  _globals['_FRAMERECEIVER']._serialized_start=137
+  _globals['_FRAMERECEIVER']._serialized_end=191
 # @@protoc_insertion_point(module_scope)

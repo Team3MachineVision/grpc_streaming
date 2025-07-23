@@ -1,17 +1,20 @@
 syntax = "proto3";
 
-package webcam;
+// package webcamstreamer;  // ✅ Python도 이걸로 변경
 
-service WebcamStreamer {
-  rpc StreamVideo(stream Frame) returns (stream FrameResponse);
+option csharp_namespace = "WebcamStreamer.Grpc";
+
+service FrameReceiver {
+    rpc SendFrames (stream FrameData) returns (FrameAck);
 }
 
-message Frame {
-  bytes image = 1;
-  int64 timestamp = 2;
+message FrameData {
+    int32 camera_id = 1;
+    bytes frame = 2;
+    float toe_deg = 3;
+    float camber_deg = 4;
 }
 
-message FrameResponse {
-  string status = 1;
-  string message = 2;
+message FrameAck {
+    string message = 1;
 }

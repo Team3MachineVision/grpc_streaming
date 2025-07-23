@@ -1,0 +1,2 @@
+obj\Debug\net8.0-windows\Protos/WebcamStreamer.cs \
+obj\Debug\net8.0-windows\Protos/WebcamStreamerGrpc.cs: Protos/WebcamStreamer.proto

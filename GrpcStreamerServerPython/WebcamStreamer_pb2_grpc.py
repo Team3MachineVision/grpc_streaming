@@ -25,7 +25,7 @@ if _version_not_supported:
     )
 
 
-class WebcamStreamerStub(object):
+class FrameReceiverStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -34,43 +34,43 @@ class WebcamStreamerStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.StreamVideo = channel.stream_stream(
-                '/webcam.WebcamStreamer/StreamVideo',
-                request_serializer=WebcamStreamer__pb2.Frame.SerializeToString,
-                response_deserializer=WebcamStreamer__pb2.FrameResponse.FromString,
+        self.SendFrames = channel.stream_unary(
+                '/FrameReceiver/SendFrames',
+                request_serializer=WebcamStreamer__pb2.FrameData.SerializeToString,
+                response_deserializer=WebcamStreamer__pb2.FrameAck.FromString,
                 _registered_method=True)
 
 
-class WebcamStreamerServicer(object):
+class FrameReceiverServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def StreamVideo(self, request_iterator, context):
+    def SendFrames(self, request_iterator, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_WebcamStreamerServicer_to_server(servicer, server):
+def add_FrameReceiverServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'StreamVideo': grpc.stream_stream_rpc_method_handler(
-                    servicer.StreamVideo,
-                    request_deserializer=WebcamStreamer__pb2.Frame.FromString,
-                    response_serializer=WebcamStreamer__pb2.FrameResponse.SerializeToString,
+            'SendFrames': grpc.stream_unary_rpc_method_handler(
+                    servicer.SendFrames,
+                    request_deserializer=WebcamStreamer__pb2.FrameData.FromString,
+                    response_serializer=WebcamStreamer__pb2.FrameAck.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'webcam.WebcamStreamer', rpc_method_handlers)
+            'FrameReceiver', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('webcam.WebcamStreamer', rpc_method_handlers)
+    server.add_registered_method_handlers('FrameReceiver', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class WebcamStreamer(object):
+class FrameReceiver(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def StreamVideo(request_iterator,
+    def SendFrames(request_iterator,
             target,
             options=(),
             channel_credentials=None,
@@ -80,12 +80,12 @@ class WebcamStreamer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.stream_stream(
+        return grpc.experimental.stream_unary(
             request_iterator,
             target,
-            '/webcam.WebcamStreamer/StreamVideo',
-            WebcamStreamer__pb2.Frame.SerializeToString,
-            WebcamStreamer__pb2.FrameResponse.FromString,
+            '/FrameReceiver/SendFrames',
+            WebcamStreamer__pb2.FrameData.SerializeToString,
+            WebcamStreamer__pb2.FrameAck.FromString,
             options,
             channel_credentials,
             insecure,
